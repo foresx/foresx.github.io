@@ -57,6 +57,7 @@ author:
   name   : "Xianzhen Li"
   avatar : "/assets/images/avatar.jpg"
   bio    : "All my love ro Rx!"
+  location : "Shenzhen, China"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -64,7 +65,6 @@ author:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:satioasuka@gmail.com"
-
 
 footer:
   links:
