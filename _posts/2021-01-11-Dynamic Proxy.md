@@ -24,6 +24,17 @@ header:
 1. 静态代理是我们自己手动去构建 proxy object 且必须实现接口方法.
 2. 静态代理在编译时就已经实现,编译完成后代理类是一个实际的class文件.
 
+两种实现方式:
+
+1. 继承
+通过继承来 override 父类中的方法.
+缺点因为 java 是单继承的,所以针对每一个target object 都需要生成一个 proxy object 作为子类.导致类的数量增加.
+2. 聚合
+通过把 target project 耦合到 proxy project 中,重新实现 target object 的方法.
+相比于上一种方法,可以将多个 target object 耦合到 proxy object, 只用一个 proxy object 作为多个 target object 的代理.
+
+总结,静态代理需要手动编写代码,并且需要新建 proxy class 来进行实现.这样会造成类的爆炸,代码的复杂性上升,维护起来麻烦.
+
 ### 动态代理
 
 1. java 中的动态代理主要分为两类.
@@ -31,6 +42,8 @@ header:
 这是因为 jdk proxy 需要通过接口信息去构建生成代理对象.并且jdk proxy 生成的对象extends Proxy, 所以 jdk proxy 只支持对于接口实现类的动态代理.
    - CGLIB 是通过 ASM 字节码处理框架, 转换字节码并且生成 target object 的子类从而实现对target object 的扩展(子类就是我们的 proxy object)
 2. 动态代理是在运行时动态生成的，即编译完成后没有实际的class文件，而是在运行时动态生成类字节码，并加载到JVM中
+
+动态代理的本质就是在程序运行时进行对proxy object 类进行生成. 即通过输入的内容计算出需要动态生成的proxy object 的内容形成class 字节码.然后通过反射对字节码进行实例化返回给需要使用的地方.
 
 ### JDK Proxy
 
