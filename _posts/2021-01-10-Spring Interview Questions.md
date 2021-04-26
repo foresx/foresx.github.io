@@ -28,5 +28,7 @@ header:
 
 ### Spring AOP 和 AspectJ 的关系
 
+### Spring 导致 mybaits,hibernate 一级缓存失效以及
+
 
 <cite><a href="https://foresx.github.io">Xianzhen</a></cite>
