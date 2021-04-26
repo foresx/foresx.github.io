@@ -7,7 +7,7 @@ tags:
   - Spring
 # link: https://foresx.github.io/blog
 header:
-  overlay_image: /assets/images/banner.jpeg
+  overlay_image: /assets/images/banner.jpg
   overlay_filter: 0.5
 
 ---
